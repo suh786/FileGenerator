@@ -1,0 +1,28 @@
+﻿<Window x:Class="FileGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" Title="MainWindow" Height="180" Width="517">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Text="File Name" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <TextBox Text="{Binding FileName, Mode=TwoWay}" Grid.Row="0" Grid.Column="1" Margin="5" />
+
+        <TextBlock Text="# of Records" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <TextBox Text="{Binding NumberOfRecords, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <ProgressBar Name="prgsBar" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Maximum="{Binding NumberOfRecords}"/>
+
+        <Button Name ="btnGenerate" Content="Generate File" Grid.Row="3" Grid.Column="0" Margin="5" Click="Button_Click" />
+    </Grid>
+</Window>
