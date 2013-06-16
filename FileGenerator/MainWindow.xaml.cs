@@ -119,6 +119,7 @@ namespace FileGenerator
                     var counter = i.ToString();
                     var person = new Person
                                      {
+                                         Id = "Id" + counter,
                                          FirstName = "FirstName" + counter,
                                          MiddleName = "MiddleName" + counter,
                                          LastName = "LastName" + counter,
@@ -141,6 +142,7 @@ namespace FileGenerator
 
     public class Person
     {
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -154,8 +156,9 @@ namespace FileGenerator
         public override string ToString()
         {
 
-            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}",
+            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}{10}",
                                  ",",
+                                 Id,
                                  FirstName,
                                  MiddleName,
                                  LastName,
